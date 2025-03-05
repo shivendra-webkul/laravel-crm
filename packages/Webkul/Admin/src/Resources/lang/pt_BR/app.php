@@ -1090,6 +1090,78 @@ return [
             ],
         ],
 
+        'marketing' => [
+            'events' => [
+                'index' => [
+                    'create-btn'          => 'Criar Evento',
+                    'title'               => 'Eventos',
+                    'create-success'      => 'Evento criado com sucesso.',
+                    'update-success'      => 'Evento atualizado com sucesso.',
+                    'delete-success'      => 'Evento excluído com sucesso.',
+                    'delete-failed'       => 'Não é possível excluir o evento.',
+                    'mass-delete-success' => 'Eventos excluídos com sucesso',
+
+                    'datagrid'   => [
+                        'delete'       => 'Excluir',
+                        'edit'         => 'Editar',
+                        'id'           => 'ID',
+                        'name'         => 'Nome',
+                        'description'  => 'Descrição',
+                        'date'         => 'Data',
+                    ],
+
+                    'create'     => [
+                        'title'       => 'Criar Evento',
+                        'name'        => 'Nome',
+                        'date'        => 'Data',
+                        'description' => 'Descrição',
+                        'save-btn'    => 'Salvar Evento',
+                    ],
+
+                    'edit' => [
+                        'title' => 'Editar Evento',
+                    ],
+                ],
+            ],
+
+            'campaigns' => [
+                'index' => [
+                    'create-btn'          => 'Criar Campanha',
+                    'title'               => 'Campanhas',
+                    'create-success'      => 'Campanha criada com sucesso.',
+                    'update-success'      => 'Campanha atualizada com sucesso.',
+                    'delete-success'      => 'Campanha excluída com sucesso.',
+                    'delete-failed'       => 'Não é possível excluir a campanha.',
+                    'mass-delete-success' => 'Campanhas excluídas com sucesso',
+
+                    'datagrid'   => [
+                        'id'       => 'ID',
+                        'name'     => 'Nome',
+                        'subject'  => 'Assunto',
+                        'status'   => 'Status',
+                        'active'   => 'Ativo',
+                        'inactive' => 'Inativo',
+                        'edit'     => 'Editar',
+                        'delete'   => 'Excluir',
+                    ],
+
+                    'create'     => [
+                        'title'          => 'Criar Campanha',
+                        'name'           => 'Nome',
+                        'type'           => 'Tipo',
+                        'subject'        => 'Assunto',
+                        'event'          => 'Evento',
+                        'email-template' => 'Modelo de Email',
+                        'status'         => 'Status',
+                    ],
+
+                    'edit' => [
+                        'title' => 'Editar Campanha',
+                    ],
+                ],
+            ],
+        ],
+
         'tags' => [
             'index' => [
                 'create-btn'     => 'Criar Tag',
@@ -1691,8 +1763,10 @@ return [
         'destroy-failed'    => 'Lead não pode ser excluído.',
 
         'file' => [
+            'empty-content'    => 'O conteúdo do PDF está vazio ou não pôde ser extraído.',
             'invalid-format'   => 'Formato JSON inválido.',
             'invalid-response' => 'Formato de resposta AI inválido.',
+            'missing-api-key'  => 'Chave API ou configuração do modelo ausente.',
             'not-found'        => 'Arquivo não encontrado.',
         ],
 
@@ -1762,12 +1836,13 @@ return [
             ],
 
             'upload' => [
-                'create-lead' => 'Criar Lead Usando AI',
-                'file'        => 'Upload de Arquivo',
-                'file-info'   => 'Apenas arquivos em formato PDF são aceitos.',
-                'save-btn'    => 'Salvar',
-                'sample-pdf'  => 'PDF de Exemplo',
-                'upload-pdf'  => 'Carregar PDF',
+                'create-lead'   => 'Criar Lead Usando AI',
+                'file'          => 'Upload de Arquivo',
+                'file-info'     => 'Apenas arquivos em formato PDF são aceitos.',
+                'file-required' => 'Por favor, selecione pelo menos um arquivo válido para prosseguir.',
+                'sample-pdf'    => 'PDF de Exemplo',
+                'save-btn'      => 'Salvar',
+                'upload-pdf'    => 'Carregar PDF',
             ],
         ],
 
@@ -1881,11 +1956,14 @@ return [
 
     'configuration' => [
         'index' => [
-            'back'         => 'Voltar',
-            'save-btn'     => 'Salvar Configuração',
-            'save-success' => 'Configuração Salva com Sucesso.',
-            'search'       => 'Pesquisar',
-            'title'        => 'Configuração',
+            'back'           => 'Voltar',
+            'delete'         => 'Excluir',
+            'save-btn'       => 'Salvar Configuração',
+            'save-success'   => 'Configuração Salva com Sucesso.',
+            'search'         => 'Pesquisar',
+            'select-country' => 'Selecionar País',
+            'select-state'   => 'Selecionar Estado',
+            'title'          => 'Configuração',
 
             'general'  => [
                 'title'   => 'Geral',
@@ -1894,9 +1972,16 @@ return [
                 'general' => [
                     'title'           => 'Geral',
                     'info'            => 'Atualize suas configurações gerais aqui.',
+
                     'locale-settings' => [
                         'title'       => 'Configurações de Localidade',
                         'title-info'  => 'Define o idioma usado na interface do usuário, como Árabe (ar), Inglês (en), Espanhol (es), Persa (fa) e Turco (tr).',
+                    ],
+
+                    'admin-logo' => [
+                        'logo-image' => 'Imagem do Logo',
+                        'title'      => 'Logo do Admin',
+                        'title-info' => 'Configure a imagem do logo para o seu painel de administração.',
                     ],
                 ],
             ],
@@ -1927,6 +2012,8 @@ return [
                 'info'  => 'Configuração do Magic AI para a aplicação.',
 
                 'settings' => [
+                    'accepted-types'      => 'Tipos aceitos',
+                    'accepted-types-info' => 'Lista separada por vírgulas de tipos de arquivos aceitos para geração de PDF.',
                     'api-domain'          => 'Domínio da API LLM',
                     'api-domain-info'     => 'Para Olama e Grow apenas, Ex: http://localhost:11434',
                     'api-key'             => 'Chave API',
@@ -1946,6 +2033,46 @@ return [
                         'ollama'       => 'Ollama (llama3.2:latest)',
                         'title'        => 'Modelos',
                     ],
+                ],
+            ],
+
+            'settings' => [
+                'title' => 'Configurações',
+                'info'  => 'Atualize suas configurações aqui.',
+
+                'footer' => [
+                    'info'       => 'Podemos configurar a seção powered by aqui.',
+                    'powered-by' => 'Editor de texto "Powered by"',
+                    'title'      => 'Configurações da Seção Powered by',
+                ],
+
+                'menu' => [
+                    'activities'     => 'Atividades',
+                    'configuration'  => 'Configuração',
+                    'contacts'       => 'Contatos',
+                    'dashboard'      => 'Painel de Controle',
+                    'draft'          => 'Rascunho',
+                    'inbox'          => 'Caixa de Entrada',
+                    'info'           => 'Podemos configurar o nome dos itens do menu aqui.',
+                    'leads'          => 'Leads',
+                    'mail'           => 'Correio',
+                    'organizations'  => 'Organizações',
+                    'outbox'         => 'Caixa de Saída',
+                    'persons'        => 'Pessoas',
+                    'products'       => 'Produtos',
+                    'quotes'         => 'Cotações',
+                    'sent'           => 'Enviado',
+                    'settings'       => 'Configurações',
+                    'title'          => 'Configurações de Itens do Menu',
+                    'trash'          => 'Lixeira',
+                ],
+
+                'menu-color' => [
+                    'active-background-color' => 'Cor de Fundo Ativa',
+                    'active-text-color'       => 'Cor do Texto Ativo',
+                    'info'                    => 'Podemos alterar as cores dos itens do menu aqui.',
+                    'text-color'              => 'Cor do Texto',
+                    'title'                   => 'Configurações de Cor dos Itens do Menu',
                 ],
             ],
         ],
@@ -2069,7 +2196,6 @@ return [
         'back'                 => 'Voltar',
         'name'                 => 'Nome',
         'configuration'        => 'Configuração',
-        'activities'           => 'Atividades',
         'howdy'                => 'Olá!',
         'warehouses'           => 'Armazéns',
         'warehouse'            => 'Armazém',

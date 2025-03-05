@@ -1118,6 +1118,7 @@ return [
                         'name'        => 'Tên',
                         'date'        => 'Ngày',
                         'description' => 'Mô tả',
+                        'save-btn'    => 'Lưu Sự kiện',
                     ],
 
                     'edit' => [
@@ -1770,8 +1771,10 @@ return [
         'destroy-failed'    => 'Không thể xóa khách hàng tiềm năng.',
 
         'file' => [
+            'empty-content'    => 'Nội dung PDF trống hoặc không thể trích xuất.',
             'invalid-format'   => 'Định dạng JSON không hợp lệ.',
             'invalid-response' => 'Định dạng phản hồi AI không hợp lệ.',
+            'missing-api-key'  => 'Thiếu khóa API hoặc cấu hình mô hình.',
             'not-found'        => 'Không tìm thấy tệp.',
         ],
 
@@ -1841,12 +1844,13 @@ return [
             ],
 
             'upload' => [
-                'create-lead' => 'Tạo Khách Hàng Tiềm Năng Bằng AI',
-                'file'        => 'Tải Lên Tệp',
-                'file-info'   => 'Chỉ chấp nhận các tệp định dạng PDF.',
-                'save-btn'    => 'Lưu',
-                'sample-pdf'  => 'PDF Mẫu',
-                'upload-pdf'  => 'Tải Lên PDF',
+                'create-lead'   => 'Tạo Khách Hàng Tiềm Năng Bằng AI',
+                'file'          => 'Tải Lên Tệp',
+                'file-info'     => 'Chỉ chấp nhận các tệp định dạng PDF.',
+                'file-required' => 'Vui lòng chọn ít nhất một tệp hợp lệ để tiếp tục.',
+                'sample-pdf'    => 'PDF Mẫu',
+                'save-btn'      => 'Lưu',
+                'upload-pdf'    => 'Tải Lên PDF',
             ],
         ],
 
@@ -1960,11 +1964,14 @@ return [
 
     'configuration' => [
         'index' => [
-            'back'         => 'Quay lại',
-            'save-btn'     => 'Lưu Cấu hình',
-            'save-success' => 'Cấu hình đã được lưu thành công.',
-            'search'       => 'Tìm kiếm',
-            'title'        => 'Cấu hình',
+            'back'           => 'Quay lại',
+            'delete'         => 'Xóa',
+            'save-btn'       => 'Lưu Cấu hình',
+            'save-success'   => 'Cấu hình đã được lưu thành công.',
+            'search'         => 'Tìm kiếm',
+            'select-country' => 'Chọn Quốc gia',
+            'select-state'   => 'Chọn Bang',
+            'title'          => 'Cấu hình',
 
             'general'  => [
                 'title'   => 'Chung',
@@ -1976,6 +1983,12 @@ return [
                     'locale-settings' => [
                         'title'       => 'Cài đặt ngôn ngữ',
                         'title-info'  => 'Định nghĩa ngôn ngữ được sử dụng trong giao diện người dùng, như tiếng Ả Rập (ar), tiếng Anh (en), tiếng Tây Ban Nha (es), tiếng Ba Tư (fa) và tiếng Thổ Nhĩ Kỳ (tr).',
+                    ],
+
+                    'admin-logo' => [
+                        'logo-image' => 'Hình ảnh Logo',
+                        'title'      => 'Logo Quản trị',
+                        'title-info' => 'Cấu hình hình ảnh logo cho bảng điều khiển quản trị của bạn.',
                     ],
                 ],
             ],
@@ -2006,6 +2019,8 @@ return [
                 'info'  => 'Cấu hình Magic AI cho ứng dụng.',
 
                 'settings' => [
+                    'accepted-types'      => 'Các loại tệp được chấp nhận',
+                    'accepted-types-info' => 'Danh sách các loại tệp được chấp nhận cho việc tạo PDF, cách nhau bằng dấu phẩy.',
                     'api-domain'          => 'Tên miền API LLM',
                     'api-domain-info'     => 'Dành cho Olama và Grow, Ví dụ: http://localhost:11434',
                     'api-key'             => 'Khóa API',
@@ -2024,7 +2039,49 @@ return [
                         'llama'        => 'Llama 3.3 (Groq)',
                         'ollama'       => 'Ollama (llama3.2:latest)',
                         'title'        => 'Mô hình',
+                        'title'        => 'Cài đặt Ngôn ngữ',
+                        'title-info'   => 'Định nghĩa ngôn ngữ sử dụng trong giao diện người dùng, như tiếng Ả Rập (ar), tiếng Anh (en), tiếng Tây Ban Nha (es), tiếng Ba Tư (fa) và tiếng Thổ Nhĩ Kỳ (tr).',
                     ],
+                ],
+            ],
+
+            'settings' => [
+                'title' => 'Cài đặt',
+                'info'  => 'Cập nhật cài đặt của bạn tại đây.',
+
+                'footer' => [
+                    'info'       => 'Chúng tôi có thể cấu hình phần powered by tại đây.',
+                    'powered-by' => 'Được hỗ trợ bởi trình chỉnh sửa văn bản',
+                    'title'      => 'Cấu hình Phần Powered by',
+                ],
+
+                'menu' => [
+                    'activities'     => 'Hoạt động',
+                    'configuration'  => 'Cấu hình',
+                    'contacts'       => 'Liên hệ',
+                    'dashboard'      => 'Bảng điều khiển',
+                    'draft'          => 'Thư nháp',
+                    'inbox'          => 'Hộp thư đến',
+                    'info'           => 'Chúng tôi có thể cấu hình tên các mục menu tại đây.',
+                    'leads'          => 'Khách hàng tiềm năng',
+                    'mail'           => 'Thư',
+                    'organizations'  => 'Tổ chức',
+                    'outbox'         => 'Hộp thư đi',
+                    'persons'        => 'Người',
+                    'products'       => 'Sản phẩm',
+                    'quotes'         => 'Báo giá',
+                    'sent'           => 'Đã gửi',
+                    'settings'       => 'Cài đặt',
+                    'title'          => 'Cấu hình Mục Menu',
+                    'trash'          => 'Thùng rác',
+                ],
+
+                'menu-color' => [
+                    'active-background-color' => 'Màu nền Hoạt động',
+                    'active-text-color'       => 'Màu chữ Hoạt động',
+                    'info'                    => 'Chúng tôi có thể thay đổi màu các mục menu tại đây.',
+                    'text-color'              => 'Màu chữ',
+                    'title'                   => 'Cấu hình Màu Mục Menu',
                 ],
             ],
         ],

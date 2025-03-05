@@ -1120,6 +1120,7 @@ return [
                         'name'        => 'Name',
                         'date'        => 'Date',
                         'description' => 'Description',
+                        'save-btn'    => 'Save Event',
                     ],
 
                     'edit' => [
@@ -1875,8 +1876,10 @@ return [
         'destroy-failed'    => 'Lead can not be deleted.',
 
         'file' => [
+            'empty-content'    => 'PDF content is empty or could not be extracted.',
             'invalid-format'   => 'Invalid JSON format.',
             'invalid-response' => 'Invalid AI response format.',
+            'missing-api-key'  => 'Missing API key or model configuration.',
             'not-found'        => 'File not found.',
         ],
 
@@ -1946,12 +1949,13 @@ return [
             ],
 
             'upload' => [
-                'create-lead' => 'Create Lead Using AI',
-                'file'        => 'File Upload',
-                'file-info'   => 'Only PDF format files are accepted.',
-                'save-btn'    => 'Save',
-                'sample-pdf'  => 'Sample PDF',
-                'upload-pdf'  => 'Upload PDF',
+                'create-lead'   => 'Create Lead Using AI',
+                'file'          => 'File Upload',
+                'file-info'     => 'Only PDF format files are accepted.',
+                'file-required' => 'Please select at least one valid file to proceed.',
+                'sample-pdf'    => 'Sample PDF',
+                'save-btn'      => 'Save',
+                'upload-pdf'    => 'Upload PDF',
             ],
         ],
 
@@ -2065,11 +2069,14 @@ return [
 
     'configuration' => [
         'index' => [
-            'back'         => 'Back',
-            'save-btn'     => 'Save Configuration',
-            'save-success' => 'Configuration Saved Successfully.',
-            'search'       => 'Search',
-            'title'        => 'Configuration',
+            'back'           => 'Back',
+            'delete'         => 'Delete',
+            'save-btn'       => 'Save Configuration',
+            'save-success'   => 'Configuration Saved Successfully.',
+            'search'         => 'Search',
+            'select-country' => 'Select Country',
+            'select-state'   => 'Select State',
+            'title'          => 'Configuration',
 
             'general'  => [
                 'title'   => 'General',
@@ -2081,6 +2088,50 @@ return [
                     'locale-settings' => [
                         'title'       => 'Locale Settings',
                         'title-info'  => 'Defines the language used in the user interface, such as Arabic (ar), English (en), Spanish (es), Persian(fa) and Turkish (tr).',
+                    ],
+
+                    'admin-logo' => [
+                        'logo-image' => 'Logo Image',
+                        'title'      => 'Admin Logo',
+                        'title-info' => 'Configure logo image for your admin panel.',
+                    ],
+                ],
+
+                'settings' => [
+                    'title' => 'Settings',
+                    'info'  => 'Update your settings here.',
+
+                    'footer' => [
+                        'info'       => 'We can configure the powered by section here.',
+                        'powered-by' => 'Powered by text editor',
+                        'title'      => 'Powered by Section Configurations',
+                    ],
+
+                    'menu' => [
+                        'activities'     => 'Activities',
+                        'configuration'  => 'Configuration',
+                        'contacts'       => 'Contacts',
+                        'dashboard'      => 'Dashboard',
+                        'draft'          => 'Draft',
+                        'inbox'          => 'Inbox',
+                        'info'           => 'We can configure the menu items name here.',
+                        'leads'          => 'Leads',
+                        'mail'           => 'Mail',
+                        'organizations'  => 'Organizations',
+                        'outbox'         => 'Outbox',
+                        'persons'        => 'Persons',
+                        'products'       => 'Products',
+                        'quotes'         => 'Quotes',
+                        'sent'           => 'Sent',
+                        'settings'       => 'Settings',
+                        'title'          => 'Menu Item Configurations',
+                        'trash'          => 'Trash',
+                    ],
+
+                    'menu-color' => [
+                        'brand-color' => 'Brand Color',
+                        'info'        => 'We can change the menu items colors here.',
+                        'title'       => 'Menu Item Color Configurations',
                     ],
                 ],
             ],
@@ -2111,8 +2162,10 @@ return [
                 'info'  => 'Magic AI configuration for the application.',
 
                 'settings' => [
+                    'accepted-types'      => 'Accepted types',
+                    'accepted-types-info' => 'Comma separated list of file types that are accepted for PDF generation.',
                     'api-domain'          => 'LLM API Domain',
-                    'api-domain-info'     => ' For Olama And Grow only, Exp:- http://localhost:11434',
+                    'api-domain-info'     => 'For Olama And Grow only, Exp:- http://localhost:11434',
                     'api-key'             => 'API Key',
                     'api-key-info'        => 'Please ensure that you use a unique API key for each model type to maintain optimal performance and security.',
                     'enable'              => 'Enable',

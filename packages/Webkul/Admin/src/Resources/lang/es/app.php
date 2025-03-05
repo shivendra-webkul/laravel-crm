@@ -1121,6 +1121,7 @@ return [
                         'name'        => 'Nombre',
                         'date'        => 'Fecha',
                         'description' => 'Descripción',
+                        'save-btn'    => 'Guardar Evento',
                     ],
 
                     'edit' => [
@@ -1876,8 +1877,10 @@ return [
         'destroy-failed'    => 'No se puede eliminar el lead.',
 
         'file' => [
+            'empty-content'    => 'El contenido del PDF está vacío o no se pudo extraer.',
             'invalid-format'   => 'Formato JSON inválido.',
             'invalid-response' => 'Formato de respuesta de IA inválido.',
+            'missing-api-key'  => 'Falta la clave API o la configuración del modelo.',
             'not-found'        => 'Archivo no encontrado.',
         ],
 
@@ -1947,12 +1950,13 @@ return [
             ],
 
             'upload' => [
-                'create-lead' => 'Crear Lead Usando IA',
-                'file'        => 'Subir Archivo',
-                'file-info'   => 'Solo se aceptan archivos en formato PDF.',
-                'save-btn'    => 'Guardar',
-                'sample-pdf'  => 'PDF de Muestra',
-                'upload-pdf'  => 'Subir PDF',
+                'create-lead'   => 'Crear Lead Usando IA',
+                'file'          => 'Subir Archivo',
+                'file-info'     => 'Solo se aceptan archivos en formato PDF.',
+                'file-required' => 'Por favor, selecciona al menos un archivo válido para continuar.',
+                'sample-pdf'    => 'PDF de Muestra',
+                'save-btn'      => 'Guardar',
+                'upload-pdf'    => 'Subir PDF',
             ],
         ],
 
@@ -2066,11 +2070,14 @@ return [
 
     'configuration' => [
         'index' => [
-            'back'         => 'Volver',
-            'save-btn'     => 'Guardar Configuración',
-            'save-success' => 'Configuración Guardada Exitosamente.',
-            'search'       => 'Buscar',
-            'title'        => 'Configuración',
+            'back'           => 'Regresar',
+            'delete'         => 'Eliminar',
+            'save-btn'       => 'Guardar Configuración',
+            'save-success'   => 'Configuración Guardada Exitosamente.',
+            'search'         => 'Buscar',
+            'select-country' => 'Seleccionar País',
+            'select-state'   => 'Seleccionar Estado',
+            'title'          => 'Configuración',
 
             'general'  => [
                 'title'   => 'General',
@@ -2078,10 +2085,56 @@ return [
 
                 'general' => [
                     'title'           => 'General',
-                    'info'            => 'Actualiza tus ajustes generales aquí.',
+                    'info'            => 'Actualiza tus configuraciones generales aquí.',
                     'locale-settings' => [
-                        'title'       => 'Configuración Regional',
-                        'title-info'  => 'Define el idioma utilizado en la interfaz de usuario, como árabe (ar), inglés (en), español (es), persa (fa) y turco (tr).',
+                        'title'       => 'Configuraciones de Idioma',
+                        'title-info'  => 'Define el idioma utilizado en la interfaz de usuario, como Árabe (ar), Inglés (en), Español (es), Persa (fa) y Turco (tr).',
+                    ],
+
+                    'admin-logo' => [
+                        'logo-image' => 'Imagen del Logo',
+                        'title'      => 'Logo del Administrador',
+                        'title-info' => 'Configura la imagen del logo para tu panel de administración.',
+                    ],
+                ],
+
+                'settings' => [
+                    'title' => 'Configuraciones',
+                    'info'  => 'Actualiza tus configuraciones aquí.',
+
+                    'footer' => [
+                        'info'       => 'Podemos configurar la sección de powered by aquí.',
+                        'powered-by' => 'Editor de texto impulsado por',
+                        'title'      => 'Configuraciones de la Sección Powered by',
+                    ],
+
+                    'menu' => [
+                        'activities'     => 'Actividades',
+                        'configuration'  => 'Configuración',
+                        'contacts'       => 'Contactos',
+                        'dashboard'      => 'Tablero',
+                        'draft'          => 'Borrador',
+                        'inbox'          => 'Bandeja de Entrada',
+                        'info'           => 'Podemos configurar los nombres de los elementos del menú aquí.',
+                        'leads'          => 'Leads',
+                        'mail'           => 'Correo',
+                        'organizations'  => 'Organizaciones',
+                        'outbox'         => 'Bandeja de Salida',
+                        'persons'        => 'Personas',
+                        'products'       => 'Productos',
+                        'quotes'         => 'Cotizaciones',
+                        'sent'           => 'Enviados',
+                        'settings'       => 'Configuraciones',
+                        'title'          => 'Configuraciones de Elementos del Menú',
+                        'trash'          => 'Papelera',
+                    ],
+
+                    'menu-color' => [
+                        'active-background-color' => 'Color de Fondo Activo',
+                        'active-text-color'       => 'Color de Texto Activo',
+                        'info'                    => 'Podemos cambiar los colores de los elementos del menú aquí.',
+                        'text-color'              => 'Color de Texto',
+                        'title'                   => 'Configuraciones de Color de Elementos del Menú',
                     ],
                 ],
             ],
@@ -2112,6 +2165,8 @@ return [
                 'info'  => 'Configuración de Magic AI para la aplicación.',
 
                 'settings' => [
+                    'accepted-types'      => 'Tipos aceptados',
+                    'accepted-types-info' => 'Lista separada por comas de tipos de archivos que se aceptan para la generación de PDF.',
                     'api-domain'          => 'Dominio de la API de LLM',
                     'api-domain-info'     => 'Solo para Olama y Grow, Ejemplo: http://localhost:11434',
                     'api-key'             => 'Clave API',
